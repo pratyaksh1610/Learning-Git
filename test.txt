@@ -1,1 +1,82 @@
+
 Tech enthusiast
+
+Git is a version control system (VCS) which is used to maintain history of project,which person
+made which change, in which file and on which date so that we can go back to the initial project
+if the change that was made was not suitable or the change lead to some issue.
+
+Git is used to manipulate file system.
+
+Github is a platform where we host git repositories.
+
+git init - initialise empty git repo in project folder to track changes
+cd - change directory
+mkdir  -  make a folder
+ls - view contents of the folder
+ls -a - to look for hidden files
+
+ls .git(folder name) - what is inside (list) .git folder
+ (now any change we made in project folder git will take it and store all the changes)
+touch names.txt - create a new file
+git status - changes that are made (history of project)
+
+names.txt(red highlighted)(untracked files)(needs to be tracked so git maintain its history) means untracked , now if we share project on github with someone
+this will not be known to anyone as it is untracked,now to maintain that commit,
+we need to track and add to staging area, so that it can be maintained
+
+git add "file_name" -  add this to staging area (for a single file)
+git add . - add all files(everything in current directory) to staging area
+(now names.txt is made green highlighted)
+
+git commit -m " description of that message"
+(-m means provide a message)
+
+nothing to commit, working tree clean -> means everything is tracked and is maintained by git
+now added content in names.txt
+
+cat "file name" - displays contents of the file
+lets say now we need to unstage and we staged this by mistake so write command
+
+git restore --staged names.txt
+git log - all the changes that are made
+
+rm names.txt
+git add .
+git commit -m "names.txt deleted"
+Deleted names.txt by mistake now what we can do is that
+
+git reset "hash id"
+whatever commit I copy all commit above that will get removed
+now only 1 commit will be visible
+
+git stash (store all the changes backstage so whenever we want we can bring them back)
+git stash pop (all will come to staging area)
+
+git remote add origin " URL (write url) " - this url will associate to this folder (project in
+my case)
+
+git remote -v
+
+never commit on main branch as code is not reviewed it might get wrong so
+make a separate branch so users are not affected
+
+merging is done through pull request
+
+WORKING WITH EXISTING PROJECT (HOW TO CONTRIBUTE)
+First go the the repository
+Fork it to your account
+Clone it to your system
+(from where we have forked the project that URL is upstream URL)
+(our account URL is called origin)
+
+ make changes
+ make a new branch (git branch pratyaksh)
+ git checkout pratyaksh (now head will point to pratyaksh)
+ Now push branch to main branch (add pratyaksh branch code to main branch)
+ One branch can open one pull request only, make different branches for different
+  pull request
+
+
+
+
+
